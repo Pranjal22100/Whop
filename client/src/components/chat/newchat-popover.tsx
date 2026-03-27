@@ -112,11 +112,16 @@ export const NewChatPopover = memo(() => {
           </div>
 
           <InputGroup>
-            <InputGroupInput
+            {/* <InputGroupInput
               value={isGroupMode ? groupName : ""}
               onChange={
                 isGroupMode ? (e) => setGroupName(e.target.value) : undefined
               }
+              placeholder={isGroupMode ? "Enter group name" : "Search name"}
+            /> */}
+            <InputGroupInput
+              value={isGroupMode ? groupName : undefined}  // ← undefined, not ""
+              onChange={isGroupMode ? (e) => setGroupName(e.target.value) : undefined}
               placeholder={isGroupMode ? "Enter group name" : "Search name"}
             />
             <InputGroupAddon>
