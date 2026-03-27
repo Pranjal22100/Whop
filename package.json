@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "baseline-browser-mapping": "^2.10.11"
+  },
+  "scripts": {
+    "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend"
+  }
+}
