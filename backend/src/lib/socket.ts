@@ -27,16 +27,13 @@ export const initializeSocket = (httpServer: HTTPServer) => {
 
       if (!rawCookie) return next(new Error("Unauthorized"));
 
-      // const token = rawCookie?.split("=")?.[1]?.trim();
-
-
-      const cookies = Object.fromEntries(
-  rawCookie.split(";").map((c) => {
-    const [key, ...val] = c.trim().split("=");
-    return [key.trim(), val.join("=")];
-  })
-);
-const token = cookies["accessToken"];
+              const cookies = Object.fromEntries(
+          rawCookie.split(";").map((c) => {
+            const [key, ...val] = c.trim().split("=");
+            return [key.trim(), val.join("=")];
+          })
+        );
+      const token = cookies["accessToken"];
 
 
 
